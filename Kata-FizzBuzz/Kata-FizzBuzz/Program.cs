@@ -8,7 +8,10 @@ namespace Kata_FizzBuzz
         {
             Console.WriteLine("Hello World!");
 
-            Console.WriteLine(ConvertFizzBuzz(30));
+            for (int i = 1; i <=100; i++)
+            {
+                Console.WriteLine(ConvertFizzBuzz(i));
+            }
 
             Console.ReadKey();
         }
