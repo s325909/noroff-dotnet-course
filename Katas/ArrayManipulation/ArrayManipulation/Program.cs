@@ -14,27 +14,53 @@ namespace ArrayManipulation
 
             Console.WriteLine("Largest difference in array is: " + difference);
 
+            int pairs = PairsOfNumbersInArray(numbers);
+            Console.WriteLine("Pairs in array is: " + pairs);
+
         }
 
         public static int LargestDifferenceInArray(int[] numbers)
         {
-            int size = numbers.Length;
-
             int max = numbers[0];
             int min = numbers[0];
 
-            for (int i = 0; i < size - 1; i++)
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
                 int number = numbers[i];
                 if (max < number) max = number;
                 if (min > number) min = number;
 
-                Console.WriteLine($"Number: {number} | Min: {min} | Max: {max}");
+                // Console.WriteLine($"Number: {number} | Min: {min} | Max: {max}");
             }
-
             int difference = max - min;
 
             return difference;
+        }
+
+        public static int PairsOfNumbersInArray(int[] numbers)
+        {
+            int difference = LargestDifferenceInArray(numbers);
+            int pairs = 0;
+
+            int size = numbers.Length - 1;
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = size; j >= 0; j--)
+                {
+
+                    int a = numbers[i];
+                    int b = numbers[j];
+                    if (a + b == difference)
+                    {
+                        Console.WriteLine($"{a} + {b} == {difference}");
+                        pairs++;
+                    }
+                }
+
+            }
+
+            return pairs;
 
         }
     }
