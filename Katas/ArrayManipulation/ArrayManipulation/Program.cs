@@ -60,7 +60,7 @@ namespace ArrayManipulation
 
             }
 
-            return pairs;
+            return pairs/2;
 
         }
     }
