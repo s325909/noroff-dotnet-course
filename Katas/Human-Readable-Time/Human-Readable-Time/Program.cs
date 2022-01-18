@@ -6,7 +6,7 @@ namespace Human_Readable_Time
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Input a non-negative integer < 360 000");
+            Console.WriteLine("Input a non-negative integer");
             int seconds = 1;
             while (seconds > 0)
             {
