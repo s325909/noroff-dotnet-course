@@ -2,11 +2,26 @@
 
 namespace Human_Readable_Time
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Input a non-negative integer < 360 000");
+            int seconds = 1;
+            while (seconds > 0)
+            {
+                seconds = Int32.Parse(Console.ReadLine());
+
+                GetReadableTime(seconds);
+            }
+
+
+        }
+
+        public static void GetReadableTime(int seconds)
+        {
+            TimeSpan time = TimeSpan.FromSeconds(seconds);
+            Console.WriteLine(time.ToString());
         }
     }
 }
