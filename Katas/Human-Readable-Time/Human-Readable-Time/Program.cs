@@ -22,6 +22,8 @@ namespace Human_Readable_Time
         {
             TimeSpan time = TimeSpan.FromSeconds(seconds);
             Console.WriteLine(time.ToString());
+            // return hours.ToString("00") + ":" + mins.ToString("00") + ":" + secs.ToString("00");
+
         }
     }
 }
