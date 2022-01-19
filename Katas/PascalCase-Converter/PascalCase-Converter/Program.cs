@@ -23,7 +23,7 @@ namespace PascalCase_Converter
 
             foreach (string word in words)
             {
-                if (word.Length > 0) sb.Append(char.ToUpper(word[0]) + word[1..].ToLower());
+                if (word.Length > 0) sb.Append(char.ToUpper(word[0]) + word[1..]);
             }
             
             Console.WriteLine(sb.ToString());
