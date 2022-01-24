@@ -67,7 +67,8 @@ namespace CanComplete
                     return false;
 
                 // if (occurrences2[k] <= occurrences[k])
-                   // return true;
+                // return true;
+                Console.WriteLine("Return TRUE");
             }
             // Console.WriteLine(s2);
 
