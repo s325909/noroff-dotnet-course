@@ -9,7 +9,7 @@ namespace ReductoMultiplicitum
         {
             Console.WriteLine("Hello World!");
 
-            // SumDigProd(0, 5);
+            SumDigProd(0, 0);
             SumDigProd(16, 28);
             SumDigProd(125, 52);
         }
@@ -22,24 +22,21 @@ namespace ReductoMultiplicitum
 
             Console.WriteLine(sum + $" ({v1} + {v2})\n");
 
-            
-
-
             while (sum > 10)
             {
                 var s = sum.ToString().Select(digit => int.Parse(digit.ToString())).ToArray();
 
+                Console.WriteLine("SUM: " + sum);
                 sum = s[0];
 
                 for (int i = 1; i < s.Length; i++)
                 {
-                    Console.WriteLine(sum + $" ({sum} * {s[i]})");
+                    Console.WriteLine($"({sum} * {s[i]})");
                     sum *= s[i];
                 }
             }
 
-
-            Console.WriteLine("\n" + sum + "\n");
+            Console.WriteLine("\nSUM: " + sum + "\n");
         }
     }
 }
