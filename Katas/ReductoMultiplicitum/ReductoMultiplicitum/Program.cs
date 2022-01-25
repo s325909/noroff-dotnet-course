@@ -16,6 +16,7 @@ namespace ReductoMultiplicitum
 
         private static void SumDigProd(int v1, int v2)
         {
+            // sum = numbers.sum()  | param: numbers[]
             int a = v1;
             int b = v2;
             int sum = a + b;
@@ -24,15 +25,15 @@ namespace ReductoMultiplicitum
 
             while (sum > 10)
             {
-                var s = sum.ToString().Select(digit => int.Parse(digit.ToString())).ToArray();
+                var digits = sum.ToString().Select(digit => int.Parse(digit.ToString())).ToArray();
 
-                Console.WriteLine("SUM: " + sum);
-                sum = s[0];
+                Console.WriteLine(sum);
+                sum = digits[0];
 
-                for (int i = 1; i < s.Length; i++)
+                for (int i = 1; i < digits.Length; i++)
                 {
-                    Console.WriteLine($"({sum} * {s[i]})");
-                    sum *= s[i];
+                    Console.WriteLine($"({sum} * {digits[i]})");
+                    sum *= digits[i];
                 }
             }
 
