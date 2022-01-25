@@ -14,11 +14,20 @@ namespace Parseltongue
             string b = "She ssselects to eat that apple.";
             Console.WriteLine(b + " --> " + IsParselTounge(b));
 
-            string c = "Beatrice samples lemonade";
+            string c = "You ssseldom sssspeak sso boldly, ssso messmerizingly.";
             Console.WriteLine(c + " --> " + IsParselTounge(c));
 
-            string d = "You ssseldom sssspeak sso boldly, ssso messmerizingly.";
+            string d = "Steve likes to eat pancakes";
             Console.WriteLine(d + " --> " + IsParselTounge(d));
+
+            string e = "Sssteve likess to eat pancakess";
+            Console.WriteLine(e + " --> " + IsParselTounge(e));
+
+            string f = "Beatrice samples lemonade";
+            Console.WriteLine(f + " --> " + IsParselTounge(f));
+
+            string g = "Beatrice enjoysss lemonade";
+            Console.WriteLine(g + " --> " + IsParselTounge(g));
         }
 
         private static bool IsParselTounge(string v)
