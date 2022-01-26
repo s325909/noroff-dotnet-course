@@ -30,9 +30,9 @@ namespace Parseltongue
             Console.WriteLine(g + " --> " + IsParselTounge(g));
         }
 
-        private static bool IsParselTounge(string v)
+        private static bool IsParselTounge(string phrase)
         {
-            string[] words = v.Split(' ');
+            string[] words = phrase.Split(' ');
 
             foreach (string word in words)
             {
@@ -40,20 +40,14 @@ namespace Parseltongue
 
                 for (int i = 0; i < letters.Length - 1; i++)
                 {
-                    // Console.WriteLine(letters[i] + " | " + letters[i+1]);
-
                     if (letters[i].ToString().ToLower().Equals("s"))
                     {
                         if (letters[i + 1].ToString().ToLower().Equals("s"))
                             return true;
                         else return false;
                     }
-
-                    // if (letters[i].ToString().ToLower().Equals("s") && letters[i + 1].ToString().ToLower().Equals("s"))
-                       // return true;
                 }
             }
-
             return false;
         }
     }
