@@ -9,7 +9,6 @@ namespace RomanNumeralConverter
         {
             Console.WriteLine("Hello Roman Numeral!");
 
-
             int value = 2006;
             Console.WriteLine("\nValue: " + value + " | " + RomanNumeralConverter(value));
 
@@ -19,29 +18,19 @@ namespace RomanNumeralConverter
             value = 154;
             Console.WriteLine("\nValue: " + value + " | " + RomanNumeralConverter(value));
 
-            value = 6;
+            value = 7;
             Console.WriteLine("\nValue: " + value + " | " + RomanNumeralConverter(value));
 
-
-            /*
-            string roman = RomanNumeralConverter(2006);
-            Console.WriteLine(2006 + " == " + roman);
-            Console.WriteLine();
-
-            roman = RomanNumeralConverter(1944);
-            Console.WriteLine(1944 + " == " + roman);
-            Console.WriteLine();
-            */
-
-
+            value = 1;
+            Console.WriteLine("\nValue: " + value + " | " + RomanNumeralConverter(value));
         }
 
         private static string RomanNumeralConverter(int value)
         {
+            StringBuilder romanBulder = new();
+
             string[] romans = { "MMM", "MM", "M", "CM", "DCCC", "DCC", "DC", "D", "CD", "CCC", "CC", "C", "XC", "LXXX", "LXX", "LX", "L", "XL", "XXX", "XX", "X", "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I" };
             int[] numerals = { 3000, 2000, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-
-            StringBuilder romanBulder = new();
 
             var index = 0;
 
@@ -49,14 +38,17 @@ namespace RomanNumeralConverter
             {
                 if (value >= numerals[index])
                 {
-                    value -= numerals[index];
                     romanBulder.Append(romans[index]);
+                    value -= numerals[index];
                 }
                 else index++;
             }
 
             return romanBulder.ToString();
         }
+
+
+
 
 
         private static string RomanNumeralConverterRecursion(int value)
