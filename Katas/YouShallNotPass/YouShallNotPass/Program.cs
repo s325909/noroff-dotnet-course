@@ -31,20 +31,20 @@ namespace YouShallNotPass
 
         private static string ValidatePasswordStrength(string password)
         {
-            int creiteriaCheck = 0;
-
             if (password.Length < 6 || password.Contains(" "))
                 return "Invalid";
 
+            int creiteriaCheck = 0;
+
             if (password.Length >= 8)
                 creiteriaCheck++;
+
+            var chars = password.ToCharArray(0, password.Length);
 
             bool isLower = false;
             bool isUpper = false;
             bool isDigit = false;
             bool isSpecial = false;
-
-            var chars = password.ToCharArray(0, password.Length);
 
             for (int i = 0; i < chars.Length; i++)
             {
