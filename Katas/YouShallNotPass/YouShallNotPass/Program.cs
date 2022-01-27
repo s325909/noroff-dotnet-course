@@ -6,7 +6,7 @@ namespace YouShallNotPass
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("You Shall Not Pass!\n");
 
             string invalid = "stonk";
             string invalid2 = "pass word";
@@ -33,23 +33,23 @@ namespace YouShallNotPass
         {
             int creiteriaCheck = 0;
 
-            if (password.Length < 6 || String.IsNullOrWhiteSpace(password))
+            if (password.Length < 6 || password.Contains(" "))
                 return "Invalid";
 
             if (password.Length >= 8)
                 creiteriaCheck++;
-            
-
-            var chars = password.ToCharArray(0, password.Length);
 
             bool isLower = false;
             bool isUpper = false;
             bool isDigit = false;
             bool isSpecial = false;
 
+            var chars = password.ToCharArray(0, password.Length);
+
             for (int i = 0; i < chars.Length; i++)
             {
                 char ch = chars[i];
+
 
                 if (!isLower && char.IsLower(ch))
                 {
@@ -78,8 +78,6 @@ namespace YouShallNotPass
                 // Console.WriteLine($"({creiteriaCheck} / 5) {ch}: {isLower} | {isUpper} | {isDigit} | {isSpecial}");
             }
 
-
-               
 
             
             if (creiteriaCheck > 4) return "Strong";
