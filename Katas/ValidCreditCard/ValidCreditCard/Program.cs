@@ -28,7 +28,8 @@ namespace ValidCreditCard
 
             if (digits.Contains(6))
             {
-                for (int i = 1; i < reversedDigits.Count() - 1; i += 2)
+                // odd position (1, 3, 5, ..) from index 0 
+                for (int i = 0; i < reversedDigits.Count() - 1; i += 2)
                 {
                     int doubled = 2 * reversedDigits[i];
 
